@@ -2,7 +2,7 @@ export interface IPost {
   _id: string;
   _type: string;
   title: string;
-  slug: string;
+  slug: Slug;
   mainImage: Image;
   description: string;
   publishedAt: string;

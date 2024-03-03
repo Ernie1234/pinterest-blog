@@ -6,16 +6,15 @@ export interface IPost {
   mainImage: Image;
   description: string;
   publishedAt: string;
+  body: [];
+  categories: string;
 }
 interface Slug {
   current: string;
   _type: string;
 }
 interface Image {
-  _id: string;
-  _type: string;
   asset: {
-    _id: string;
     _type: string;
     url: string;
   };

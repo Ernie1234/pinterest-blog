@@ -11,8 +11,8 @@ interface ICard {
 function Card({ post, isShownDate }: ICard) {
   return (
     <Link
-      href={`/${post.categories}/${post.slug.current}`}
-      className="group transition-all duration-300"
+      href={`/news/${post.slug.current}`}
+      className="group flex flex-col items-center transition-all duration-300"
     >
       <Image
         src={post.mainImage.asset.url}

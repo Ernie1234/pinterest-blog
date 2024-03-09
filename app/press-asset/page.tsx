@@ -1,5 +1,5 @@
 function page() {
-  return <div>contact</div>;
+  return <div>press asset</div>;
 }
 
 export default page;

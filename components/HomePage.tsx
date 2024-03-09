@@ -67,7 +67,7 @@ const HomePage = ({ posts, data }: IProps) => {
         <h2 className="pt-4 w-4/5 lg:w-3/5 text-center font-medium text-2xl md:text-4xl lg:text-6xl">
           Latest news
         </h2>
-        <div className="py-5 mx-auto max-w-screen-xl md:py-10 lg:py-16 grid place-content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 lg:gap-8">
+        <div className="py-5 mx-auto max-w-screen-xl md:py-10 lg:py-16 grid place-content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-8">
           {/* fetch data here */}
           {data?.slice(0, 6)?.map((post) => (
             <Card key={post._id} post={post} isShownDate={false} />

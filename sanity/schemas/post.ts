@@ -33,7 +33,15 @@ export default defineType({
       title: "Categories",
       type: "string",
       options: {
-        list: ["news", "company", "press-assets"],
+        list: [
+          "product",
+          "company",
+          "ads",
+          "creators",
+          "trends",
+          "partnership",
+          "policy",
+        ],
       },
     }),
     defineField({

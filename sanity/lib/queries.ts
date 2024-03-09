@@ -14,7 +14,7 @@ export const HEADER_POSTS_QUERY = groq`*[_type == "mainCover"][0]{
     }
     
 }`;
-export const LATEST_QUERY = groq`*[_type == "post" && categories == 'news']{
+export const LATEST_QUERY = groq`*[_type == "post" ]{
   title,
     _id,
     mainImage{
@@ -31,4 +31,23 @@ export const LATEST_QUERY = groq`*[_type == "post" && categories == 'news']{
     }
 }`;
 
-export const POST_QUERY = groq`*[_type == "post" && slug.current == $slug][0]`;
+export const NEWS_DETAIL = (slug: string) => {
+  const query = groq`*[_type == "post" && slug.current == '${slug}'][0]{
+  title,
+    _id,
+    mainImage{
+      asset->{
+        _type,
+        url
+      }
+    },
+   publishedAt,
+  categories,
+    body,
+    slug{
+    current
+    }
+}`;
+
+  return query;
+};

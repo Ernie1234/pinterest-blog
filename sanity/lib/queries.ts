@@ -51,3 +51,24 @@ export const NEWS_DETAIL = (slug: string) => {
 
   return query;
 };
+
+export const RELATED_CATEGORIES_QUERIES = (cat: string) => {
+  const query = groq`*[_type == "post" && categories == '${cat}']{
+  title,
+    _id,
+    mainImage{
+      asset->{
+        _type,
+        url
+      }
+    },
+   publishedAt,
+  categories,
+    body,
+    slug{
+    current
+    }
+}`;
+
+  return query;
+};

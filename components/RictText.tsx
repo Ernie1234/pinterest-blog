@@ -23,7 +23,7 @@ export const RichText = {
   },
   list: {
     bullet: ({ children }: any) => (
-      <ul className="ml-10 py-5 list-disc space-y-5">{children}</ul>
+      <ul className="ml-10 py-5 list-disc space-y-5 text-lg">{children}</ul>
     ),
   },
   number: ({ children }: any) => (
@@ -57,7 +57,11 @@ export const RichText = {
   marks: {
     link: ({ children, value }: any) => {
       return (
-        <Link href={value.href} target="_blank" className="underline">
+        <Link
+          href={value?.href ? value.href : "www.google.com"}
+          target="_blank"
+          className="underline"
+        >
           {children}
         </Link>
       );

@@ -39,11 +39,3 @@ export default async function page() {
     </div>
   );
 }
-
-// <h1 className="lg:pt-32 text-6xl font-semibold text-slate-900">
-//   About Me
-// </h1>
-// <p className="group-hover:underline text-2xl text-center pt-6 px-1">
-//   21 February 2024
-// </p>
-// <div className="flex-1"></div>

@@ -1,10 +1,11 @@
 import { IPost } from "@/constants/types";
-import { NEWS_DETAIL } from "@/sanity/lib/queries";
+import { NEWS_DETAIL, RELATED_CATEGORIES_QUERIES } from "@/sanity/lib/queries";
 import Image from "next/image";
 
 import { loadQuery } from "@/sanity/lib/store";
 import { PortableText } from "@portabletext/react";
 import { RichText } from "@/components/RictText";
+import { Card } from "@/components";
 
 interface Props {
   params: {
@@ -15,8 +16,14 @@ interface Props {
 async function page({ params }: Props) {
   const slug = params.newId;
   const allNews = await loadQuery<IPost>(NEWS_DETAIL(slug));
-
   const item = allNews.data;
+  console.log(item.categories);
+
+  const relatedCats = await loadQuery<IPost[]>(
+    RELATED_CATEGORIES_QUERIES(item.categories)
+  );
+  const cats = relatedCats.data;
+  console.log(cats);
 
   return (
     <div>
@@ -41,7 +48,12 @@ async function page({ params }: Props) {
         <div className="flex flex-col items-center justify-center">
           <PortableText value={item?.body} components={RichText} />
         </div>
-        {/* <div className="flex-1"></div> */}
+        {/* related categories */}
+        <div className="py-6 md:py-12 lg:py-20">
+          {cats.map((category) => (
+            <Card key={category._id} post={category} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 interface ICard {
   post: IPost;
-  isShownDate: boolean;
+  isShownDate?: boolean;
 }
 function Card({ post, isShownDate }: ICard) {
   return (

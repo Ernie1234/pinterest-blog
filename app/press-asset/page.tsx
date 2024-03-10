@@ -1,9 +1,11 @@
 import Link from "next/link";
 
+import { AssetsCard, Drop } from "@/components";
+
 function page() {
   return (
-    <div className="min-h-screen flex flex-col mx-auto  w-full max-w-screen-lg bg-pink-400">
-      <div className="lg:py-40 md:py-28 py-16 bg-slate-600">
+    <div className="min-h-screen flex flex-col mx-auto  w-full max-w-screen-xl">
+      <div className="lg:py-40 md:py-28 py-16">
         <h1 className="text-center lg:text-6xl md:text-4xl text-3xl font-semibold text-slate-900">
           press asset
         </h1>
@@ -20,6 +22,44 @@ function page() {
           to learn more.
         </p>
       </div>
+      <div className="flex flex-col gap-8 md:gap-16 lg:gap-44">
+        <AssetsCard
+          imgSrc="/assets/Press_assets_product_ENGB.webp"
+          title="Product"
+          subTitle="Product screens and video footage of Pinterest in action"
+          link="https://
+          pinterest-clone-v2.netlify.app/"
+        />
+        <AssetsCard
+          imgSrc="/assets/PressAssets_Brand.webp"
+          title="Brand"
+          subTitle="Logos and other brand assets. Refer to our brand guidelines for more information."
+          link="https://
+          pinterest-clone-v2.netlify.app/"
+        />
+        <AssetsCard
+          imgSrc="/assets/PressAssets_Culture.webp"
+          title="Culture"
+          subTitle="Video and images of Pinterest’s employees and company culture"
+          link="https://
+          pinterest-clone-v2.netlify.app/"
+        />
+        <AssetsCard
+          imgSrc="/assets/built_in_ratios.webp"
+          title="B-roll"
+          subTitle="Ready-to-use video of our product, users, offices and more"
+          link="https://
+          pinterest-clone-v2.netlify.app/"
+        />
+        <AssetsCard
+          imgSrc="/assets/Newsroom_Press-asset.webp"
+          title="Leadership"
+          subTitle="Images of our executive team, including CEO Bill Ready"
+          link="https://
+          pinterest-clone-v2.netlify.app/"
+        />
+      </div>
+      <Drop />
     </div>
   );
 }

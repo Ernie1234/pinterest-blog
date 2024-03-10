@@ -9,3 +9,5 @@ export { default as CardIcon } from "./CardIcon";
 export { default as AppImage } from "./AppImage";
 export { default as Footer } from "./Footer";
 export { default as Button } from "./Button";
+export { default as AssetsCard } from "./AssetsCard";
+export { default as Drop } from "./Drop";

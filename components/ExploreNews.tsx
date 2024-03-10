@@ -21,9 +21,6 @@ function ExploreNews({ news }: Props) {
     | "policy"
   >("all");
 
-  // news.map((el) => console.log(el));
-  // console.log(news);
-
   return (
     <div className="flex flex-col justify-center items-center mx-auto w-full max-w-screen-xl">
       <h5 className="font-semibold pt-10 pb-4 text-lg">explore by category</h5>

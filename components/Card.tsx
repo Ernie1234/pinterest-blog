@@ -20,6 +20,9 @@ function Card({ post, isShownDate }: ICard) {
         height={300}
         alt={post.slug.current}
         quality={100}
+        unoptimized
+        loading="lazy"
+        objectFit="cover"
       />
       {isShownDate && <p className="text-center pt-6">{post.publishedAt}</p>}
       <p className="group-hover:underline text-2xl text-center pt-6 px-1">
